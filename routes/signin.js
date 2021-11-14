@@ -16,6 +16,4 @@ router.post('', async (req, res) => {
             res.status(400).json('Invalid Username/Password');
         }).catch(err => res.status(400).json('Error: '+err));
   });
-
-
 module.exports = router;
