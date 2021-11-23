@@ -12,6 +12,12 @@ const signin=require('./routes/signin');
 // remove this in final 
 const movie=require('./routes/movie');
 const get_movie=require('./routes/get_movie');
+const screen = require('./routes/screen');
+// Remove once all timings are added
+const create_timing = require('./routes/create_timing');
+const get_timing=require('./routes/get_timing');
+const transaction=require('./routes/transaction');
+const food=require('./routes/food');
 const uri = process.env.ATLAS_URI;
 mongoose.connect(
     uri,
@@ -42,6 +48,11 @@ app.use("/register",register);
 app.use("/signin",signin);
 app.use("/movie",movie);
 app.use("/get_movie",get_movie);
+app.use("/screen",screen);
+app.use("/create_timing",create_timing);
+app.use("/get_timing",get_timing);
+app.use("/transaction",transaction);
+app.use("/food",food);
 app.listen(3000,()=>{
     console.log(`server is running...`);
 })
