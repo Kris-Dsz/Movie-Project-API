@@ -46,7 +46,13 @@ const TransactionSchema = new Schema({
           count: {
             type: Number
           }
-  }]
+  }],
+  purchasedate: {
+      type: Date
+  },
+  poster: {
+    type: String
+  } 
 });
 
 const Transaction = mongoose.model('Transaction', TransactionSchema);

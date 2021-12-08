@@ -14,7 +14,7 @@ router.post('/create',(req, res) => {
 // Find Transactions by Username
 router.post('/user',(req, res) => {
     const username=req.body.username;
-    Transaction.find({username: username}).sort({date: "desc"})
+    Transaction.find({username: username}).sort({purchasedate: "desc"})
         .then(data => res.send(data))
         .catch(err => res.status(400).json('Error: '+err))
 });

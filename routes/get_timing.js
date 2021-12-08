@@ -6,7 +6,9 @@ router.post('',(req, res) => {
     const title=req.body.title;
     Movie.find({title})
         .then(data =>{
-            Timing.find(mongoose.Types.ObjectId(data[0]._id))
+            //res.send(data[0]._id);
+            const id = mongoose.Types.ObjectId(data[0]._id);
+            Timing.find({movieId: id})
                 .then(data => res.send(data))
                 .catch(err => res.status(400).json('Error: '+err));
         }).catch(err => res.status(400).json('Error: '+err));
